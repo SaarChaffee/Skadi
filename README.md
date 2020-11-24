@@ -4,7 +4,7 @@
 
 ## 关于
 
-[[斯卡蒂](https://img.moegirl.org.cn/common/2/22/Skadi_200813.jpg)](https://zh.moegirl.org.cn/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F:%E6%96%AF%E5%8D%A1%E8%92%82)
+[![斯卡蒂](https://img.moegirl.org.cn/common/2/22/Skadi_200813.jpg)](https://zh.moegirl.org.cn/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F:%E6%96%AF%E5%8D%A1%E8%92%82)
 是手机游戏[明日方舟](https://ak.hypergryph.com)中的一位六星近卫干员。
 斯卡蒂是一名赏金猎人，现为罗德岛所雇佣。在过去完成的赏金任务中，斯卡蒂于对抗大型生物，破坏硬目标，攻坚战，歼灭战等多类行动中展现出强劲实力，推测与其过往战斗经验相关。斯卡蒂成为赏金猎人之前的履历缺失，现于罗德岛某攻坚小队供职，同时是我老婆。
 
