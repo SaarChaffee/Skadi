@@ -12,13 +12,15 @@
 ## 简介
 
 基于[nonebot](https://github.com/nonebot/nonebot)框架，以`Python`为主要语言开发的 QQ 机器人
-`Mirai + nonebot`使得此项目可以在任何平台上运行
-此项目也作为我学习 Python 的一个很好的方式
+
+- `Mirai + nonebot`使得此项目可以在任何平台上运行
+- 此项目也作为我学习 Python 的一个很好的方式
 
 ## 功能
 
-功能的开发主要以<del>[公主连结 ☆Re:Dive](https://game.bilibili.com/pcr/pinzhuan/)玩家(天部神社已经不在了)</del>
-以及同号群里的 LSP 群友为核心，主要功能将会有
+功能的开发主要以<del>[公主连结 ☆ Re:Dive](https://game.bilibili.com/pcr/pinzhuan/)公会玩家(天部神社已经不在了)</del>
+
+- 以及同号群里的 LSP 群友为核心，主要功能将会有
 
 - **涩图**
 - ~~**抽卡**~~
