@@ -18,9 +18,8 @@
 
 ## 功能
 
-功能的开发主要以<del>[公主连结 ☆ Re:Dive](https://game.bilibili.com/pcr/pinzhuan/)公会玩家(天部神社已经不在了)</del>
-
-- 以及同号群里的 LSP 群友为核心，主要功能将会有
+功能的开发主要以<del>[公主连结 ☆ Re:Dive](https://game.bilibili.com/pcr/pinzhuan/)公会玩家(天部神社已经不存在了)</del>
+以及同好群里的 LSP 群友为核心，主要功能将会有
 
 - **涩图**
 - ~~**抽卡**~~
