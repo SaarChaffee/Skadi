@@ -10,7 +10,6 @@ import cloudscraper
 
 from skadi import config
 from .types import *
-from .test import data
 
 resp = on_command("search", rule=to_me(), aliases={"搜图"}, priority=5)
 
@@ -26,10 +25,12 @@ async def send_data_of_saucenao(pic_url: str):
     back: Message = Message()
     back += Message.template("{str}").format(str="SauceNao")
     _data = parse_obj_as(JsonData, await search_from_saucenao(pic_url)).results[0]
-    
+
     back += Message.template("{link:image}\n").format(link=_data.header.thumbnail)
-    back += Message.template("title : {title}\n").format(title=_data.data.dict()[data_models[_data.header.index_id]['title']])
-    back += Message.template("author : {author}\n").format(author=_data.data.dict()[data_models[_data.header.index_id]['author']])
+    back += Message.template("title : {title}\n").format(
+        title=_data.data.dict()[data_models[_data.header.index_id]['title']])
+    back += Message.template("author : {author}\n").format(
+        author=_data.data.dict()[data_models[_data.header.index_id]['author']])
     for url in _data.data.dict()['ext_urls']:
         back += Message.template("url : {url}\n").format(url=url)
     await resp.send(back)
@@ -54,7 +55,7 @@ async def send_data_of_ascii2d(pic_url: str):
 async def search_from_saucenao(url: str) -> dict:
     api_key = config.SAUCENAO_KEY
     proxies = config.proxies
-    
+
     sau_url = "https://saucenao.com/search.php"
     async with aiohttp.ClientSession() as session:
         async with session.get(
@@ -66,22 +67,24 @@ async def search_from_saucenao(url: str) -> dict:
 async def search_from_ascii2d(url: str) -> list:
     proxies = config.proxies
     sp = cloudscraper.create_scraper()
-    
+
     _resp = sp.get("https://ascii2d.net/search/url/" + url, timeout=15, proxies=proxies)
-    _resp = await asyncio.get_running_loop().run_in_executor(None, partial(sp.get, "https://ascii2d.net/search/url/" + url, timeout=15, proxies=proxies))
+    _resp = await asyncio.get_running_loop().run_in_executor(None,
+                                                             partial(sp.get, "https://ascii2d.net/search/url/" + url,
+                                                                     timeout=15, proxies=proxies))
     ascUrl: str = _resp.url
     if ascUrl.find("color") != -1:
         await resp.finish(Message.template("{str}").format(str="ascii2d被cloudflare五秒盾单防了，你加油"))
     ascUrl = ascUrl.replace("color", "bovw")
-    
+
     async with aiohttp.ClientSession() as session:
         async with session.get(ascUrl, headers=ascHeaders, proxy=proxies.get("http")) as response:
             html = await response.text()
-    
+
     soup = BeautifulSoup(html, 'html.parser')
     results = []
     for item in soup.select('.item-box')[1:]:
-        
+
         thumbnail = "https://ascii2d.net" + item.select('.image-box img')[0]['src']
         datas = []
         info = item.select_one('.info-box .detail-box')
@@ -98,10 +101,10 @@ async def search_from_ascii2d(url: str) -> list:
                     'title': _info.select('a')[0].text,
                     'author': _info.select('a')[1].text
                 })
-        
+
         results.append({
             'thumbnail': thumbnail,
             'datas': datas
         })
-    
+
     return results
